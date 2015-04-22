@@ -31,6 +31,8 @@ module.exports = (robot) ->
    robot.hear /(.*)コーヒー(.*)/i, (res) ->
      res.send "コーヒーより梨汁なっしーよ！！"
   
+   robot.hear /(.*)梨汁(.*)/i, (res) ->
+     res.send "ひゃっはー！！！！"
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
