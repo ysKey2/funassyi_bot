@@ -24,6 +24,12 @@ module.exports = (robot) ->
   
    robot.hear /(.*)お疲れ様(.*)/i, (res) ->
      res.send "今日も1日お疲れ様なっしー！"
+
+   robot.hear /(.*)ボンバーマン(.*)/i, (res) ->
+     res.send "1Pはアイテムが出にくいって昔聞いた事があるなっしー！"
+
+   robot.hear /(.*)コーヒー(.*)/i, (res) ->
+     res.send "コーヒーより梨汁なっしーよ！！"
   
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
