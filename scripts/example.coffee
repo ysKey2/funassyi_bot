@@ -10,8 +10,8 @@
 
 module.exports = (robot) ->
 
-   robot.hear /ping/i, (res) ->
-     res.send "pong!!"
+   robot.hear /*ふなっしー*/i, (res) ->
+     res.send "なにか用なっし〜？"
   #
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
