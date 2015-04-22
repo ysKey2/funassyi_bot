@@ -8,11 +8,23 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-#module.exports = (robot) ->
+module.exports = (robot) ->
 
-#  robot.hear /(.*)ふなっしー(.*)/i, (res) ->
-#    res.send "なにか用なっし〜？"
-  #
+   robot.hear /(.*)おーい(.*)/i, (res) ->
+     res.send "なにか用なっし〜？"
+  
+   robot.hear /(.*)おやすみ(.*)/i, (res) ->
+     res.send "おやすみなっしー！"
+  
+   robot.hear /(.*)なし(.*)/i, (res) ->
+     res.send "梨汁ぶっしゃー！！！"
+  
+   robot.hear /(.*)疲れた(.*)/i, (res) ->
+     res.send "まだまだこれからなっしーよ！！"
+  
+   robot.hear /(.*)お疲れ様(.*)/i, (res) ->
+     res.send "今日も1日お疲れ様なっしー！"
+  
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
