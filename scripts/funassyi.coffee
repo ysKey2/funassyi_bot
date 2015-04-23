@@ -11,28 +11,52 @@
 module.exports = (robot) ->
 
    robot.hear /(.*)おーい(.*)/i, (res) ->
-     res.send "なにか用なっし〜？"
-  
+     res.send res.random([
+       "なにか用なっし〜？",
+       "どうしたなっし〜？",
+       "ふなっしーは忙しいなっしーよ！"
+       ])
    robot.hear /(.*)おやすみ(.*)/i, (res) ->
-     res.send "おやすみなっしー！"
+     res.send res.random([
+       "おやすみなっしー！",
+       "いい夢見るなっしーよ！",
+       "ふなっしーも梨の葉ベッドで寝るなっしー！"
+       ])
   
    robot.hear /(.*)なし(.*)/i, (res) ->
-     res.send "梨汁ぶっしゃー！！！"
+     res.send res.random([
+       "梨汁ぶっしゃー！！！",
+       "なっしー！！",
+       "ふなっしー！"
+     ])
   
    robot.hear /(.*)疲れた(.*)/i, (res) ->
-     res.send "まだまだこれからなっしーよ！！"
+     res.send res.random([
+       "まだまだこれからなっしーよ！！",
+       "無理はしちゃダメなっしー！",
+       "梨でも食べて元気になるなっしー！"
+     ])
   
    robot.hear /(.*)お疲れ様(.*)/i, (res) ->
      res.send "今日も1日お疲れ様なっしー！"
 
    robot.hear /(.*)ボンバーマン(.*)/i, (res) ->
-     res.send "1Pはアイテムが出にくいって昔聞いた事があるなっしー！"
+     res.send res.random([
+       "1Pはアイテムが出にくいって昔聞いた事があるなっしー！",
+       "マルチタップ持ってる人は皆強いなっしー！"
+     ])
 
    robot.hear /(.*)コーヒー(.*)/i, (res) ->
-     res.send "コーヒーより梨汁なっしーよ！！"
+     res.send res.random([
+       "コーヒーより梨汁なっしーよ！！",
+       "セブンイレブンのコーヒーはなかなかなっしーね！"
+      ]) 
   
    robot.hear /(.*)梨汁(.*)/i, (res) ->
-     res.send "ひゃっはー！！！！"
+     res.send res.random([
+       "ひゃっはー！！！！",
+       "ぶっしゃー！！！！！",
+      ])
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
   #   if doorType is "pod bay"
