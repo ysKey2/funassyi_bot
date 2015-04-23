@@ -18,10 +18,11 @@
   + cd funassyi-bot
   + yo hubot
   
-サンプルスクリプトをコメントアウトしてbin/hubotで起動確認を行う
+サンプルスクリプトをコメントアウトしてbin/hubotで起動確認を行う  
 ※確かこんな感じだったような記憶が
 
 * heroku
+  + npm install --save hubot-slack
   + echo 'web: bin/hubot -a slack -n uran' > Procfile 
   + bin/hubot --adapter slack
   + heroku login
@@ -36,5 +37,5 @@
   + git commit -m "Initial commit"
   + git push heroku master
   
-herokuのざっくりとしたセットアップもとい手順
+herokuのざっくりとしたセットアップもとい手順  
 ※うる覚えなので詰まったところあったら教えてください。
