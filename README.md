@@ -10,6 +10,8 @@
 * ローカル環境でのnode
 
 ### How to set up
+  
+this is not how to use this bot, but how to set up your original slackbot on heroku.
 
 * hubot
   + brew install node redis-server
