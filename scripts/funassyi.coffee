@@ -81,6 +81,9 @@ module.exports = (robot) ->
   robot.hear /(.*)住所(.*)/i, (res) ->
     res.send "〒150-0036\n東京都渋谷区南平台町13-15 LUMBER ONE 南平台ビル ANNEX 1F"
 
+  robot.hear /(.*)ゴミ出し(.*)/i, (res) ->
+    res.send "可燃：水曜日・土曜日\n不燃ごみ：第3月曜日、\n資源：火曜日"
+
   robot.hear /(.*)の天気/i, (msg) ->
     switch msg.match[1]
       when '今日'
