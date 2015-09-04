@@ -1,13 +1,3 @@
-# Description:
-#   Example scripts for you to examine and try out.
-#
-# Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-
 module.exports = (robot) ->
 
   robot.hear /(.*)おーい(.*)/i, (res) ->
@@ -79,7 +69,7 @@ module.exports = (robot) ->
     ])
 
   robot.hear /(.*)住所(.*)/i, (res) ->
-    res.send "〒150-0036\n東京都渋谷区南平台町13-15 LUMBER ONE 南平台ビル ANNEX 1F"
+    res.send "〒150-0042 東京都渋谷区宇田川町36-6 ワールド宇田川ビル 6F A号 なっしー"
 
   robot.hear /(.*)の天気/i, (msg) ->
     switch msg.match[1]
