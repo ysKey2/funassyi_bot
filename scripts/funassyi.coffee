@@ -71,8 +71,11 @@ module.exports = (robot) ->
   robot.hear /(.*)住所(.*)/i, (res) ->
     res.send "〒150-0042 東京都渋谷区宇田川町36-6 ワールド宇田川ビル 6F A号 なっしー"
 
+  robot.hear /(.*)りょーすけべー(.*)/i, (res) ->
+    res.send "@ryo_sk: りょーすけくんはすけべなっしー!"
+
   robot.hear /(.*)りょうすけべー(.*)/i, (res) ->
-    res.send "@ryo_sk: りょーすけくんはすけべなっしー"
+    res.send "@ryo_sk: りょうすけくんはどスケベなっしー!!"
 
   robot.hear /(.*)の天気/i, (msg) ->
     switch msg.match[1]
