@@ -71,6 +71,9 @@ module.exports = (robot) ->
   robot.hear /(.*)住所(.*)/i, (res) ->
     res.send "〒150-0042 東京都渋谷区宇田川町36-6 ワールド宇田川ビル 6F A号 なっしー"
 
+  robot.hear /(.*)電話(.*)/i, (res) ->
+    res.send "TEL 03-6667-4345 FAX 03-4333-0428 なっしー"
+
   robot.hear /(.*)りょーすけべー(.*)/i, (res) ->
     res.send "@ryo_sk: りょーすけくんはすけべなっしー!"
 
@@ -97,3 +100,29 @@ module.exports = (robot) ->
       json = JSON.parse body
       if day == 3 then forecast = 'わから' else forecast = json['forecasts'][day]['telop']
       msg.reply forecast + 'なっしー！'
+
+  robot.hear /(.*)の画像/i, (msg) ->
+    imageMe msg, msg.match[1], (url) ->
+      msg.send url
+
+imageMe = (msg, query, animated, faces, cb) ->
+  cb = animated if typeof animated == 'function'
+  cb = faces if typeof faces == 'function'
+  q = v: '1.0', rsz: '8', q: query, safe: 'active'
+  q.imgtype = 'animated' if typeof animated is 'boolean' and animated is true
+  q.imgtype = 'face' if typeof faces is 'boolean' and faces is true
+  msg.http('http://ajax.googleapis.com/ajax/services/search/images')
+    .query(q)
+    .get() (err, res, body) ->
+      images = JSON.parse(body)
+      images = images.responseData?.results
+      if images?.length > 0
+        image = msg.random images
+        cb ensureImageExtension image.unescapedUrl
+
+ensureImageExtension = (url) ->
+  ext = url.split('.').pop()
+  if /(png|jpe?g|gif)/i.test(ext)
+    url
+  else
+    "#{url}#.png"
