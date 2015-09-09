@@ -77,6 +77,9 @@ module.exports = (robot) ->
   robot.hear /(.*)りょうすけべー(.*)/i, (res) ->
     res.send "@ryo_sk: りょうすけくんはどスケベなっしー!!"
 
+  robot.hear /(.*)ゴミ出し(.*)/i, (res) ->
+    res.send "可燃：水曜日・土曜日\n不燃ごみ：第3月曜日、\n資源：火曜日"
+
   robot.hear /(.*)の天気/i, (msg) ->
     switch msg.match[1]
       when '今日'
