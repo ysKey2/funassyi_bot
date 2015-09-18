@@ -1,3 +1,4 @@
+moment = require('moment-timezone')
 module.exports = (robot) ->
 
   robot.hear /(.*)おーい(.*)/i, (res) ->
@@ -105,6 +106,10 @@ module.exports = (robot) ->
     imageMe msg, msg.match[1], (url) ->
       msg.send url
 
+  robot.hear /(.*)時間(.*)/i, (res) ->
+    res.send '東京は' + moment().tz("Asia/Tokyo").format('YYYY年MM月DD日 HH:mm') + ' (JST)なっしー！!'
+    res.send '上海は' + moment().tz("Asia/Shanghai").format('YYYY年MM月DD日 HH:mm') + ' (CST)なっしー！!'
+      
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
